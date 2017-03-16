@@ -37,7 +37,7 @@
         methods : {
             ExecuteSearch : function () {
                  var VueInstance = this;
-                  axios.post('/test/public/executeSearch', {
+                  axios.post('executeSearch', {
                         search_query: VueInstance.search_query
                     })
                         .then(function (response) {
