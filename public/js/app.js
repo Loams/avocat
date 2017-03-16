@@ -12099,7 +12099,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         ExecuteSearch: function ExecuteSearch() {
             var VueInstance = this;
-            console.log(VueInstance.search_query == "");
+
             if (!VueInstance.search_query == "") {
                 axios.post('executeSearch', {
                     search_query: VueInstance.search_query

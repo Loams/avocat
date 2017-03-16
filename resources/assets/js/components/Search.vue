@@ -41,7 +41,7 @@
         methods : {
             ExecuteSearch : function () {
                  var VueInstance = this;
-                    console.log(VueInstance.search_query == "");
+
                     if(!VueInstance.search_query == ""){
                   axios.post('executeSearch', {
                         search_query: VueInstance.search_query

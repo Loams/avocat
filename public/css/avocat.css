@@ -19,6 +19,18 @@ h2 {
     font-weight: 400;
 }
 
+p {
+    margin: 0;
+}
+hr {
+    margin: 0;
+}
+.bold {
+    font-weight: 600;
+}
+.block{
+padding:20px 0;
+}
 .h1 .small, .h1 small, .h2 .small, .h2 small, .h3 .small, .h3 small, h1 .small, h1 small, h2 .small, h2 small, h3 .small, h3 small {
     font-size: 65%;
 }
