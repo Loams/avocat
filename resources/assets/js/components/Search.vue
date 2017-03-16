@@ -50,7 +50,7 @@
                         .catch(function (error) {
                         });
                 }else{
-                    VueInstance.articles
+                    VueInstance.articles = {}
                 }
             }
         }
