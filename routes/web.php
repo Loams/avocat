@@ -11,12 +11,15 @@
 |
 */
 
-Route::get('/', function () {
+Route::get(
+	'/', function () {
     return view('welcome');
 });
+//debug de json
+Route::get('/test', ['uses' => "ArticleController@testJson"]);
 
 Route::get('/articles', ['uses' => 'ArticleController@index']);
 Route::get('/article/{id}', ['uses' => 'ArticleController@show', 'as' => 'article.show'])->where('id', '[0-9]+');
-Route::get('/test', ['uses' => "ArticleController@testJson"]);
+
 Route::post('/executeSearch', 'SearchController@executeSearch')->name('execute_search');
 Route::get('/import', ['uses' => "ArticleController@importArticle"]);

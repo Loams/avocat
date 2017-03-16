@@ -6,37 +6,70 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Sleimanx2\Plastic\Searchable;
 
+/**
+ * Class Article
+ * @package App
+ */
 class Article extends Model
 {
 	use Searchable;
 
+	/**
+	 * @var array
+	 */
 	protected $fillable = ['article_id','meta_id', 'details_id'];
+	/**
+	 * @var string
+	 */
 	protected $table = 'article';
+	/**
+	 * @var bool
+	 */
 	public $timestamps = false;
 
 
-
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
 	public function versions()
 	{
 		return $this->hasMany('App\ArticleVersion');
 	}
 
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\HasOne
+	 */
 	public function meta()
 	{
 		return $this->hasOne('App\ArticleMeta', 'id');
 	}
 
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\HasOne
+	 */
 	public function	details()
 	{
 		return $this->hasOne('App\ArticleDetails', 'id');
 	}
 
+	/**
+	 * @param $this_id
+	 *
+	 * @return mixed
+	 */
 	public function checkArticleExiste($this_id)
 	{
 
 		return $this->where('id_article', '=', $this_id)->exists();
 	}
 
+	/**
+	 * @param $data
+	 * @param $id_meta
+	 * @param $id_details
+	 *
+	 * @return mixed
+	 */
 	public function store($data, $id_meta, $id_details)
 	{
 		$this->id_article = $data;
@@ -47,6 +80,9 @@ class Article extends Model
 	}
 
 
+	/**
+	 * @return array
+	 */
 	public function buildDocument ()
 	{
 		$data = [
@@ -62,7 +98,12 @@ class Article extends Model
 		return $data;
 	}
 
-	public function getElasticDate( $date )
+	/**
+	 * @param $date
+	 *
+	 * @return mixed
+	 */
+	public function getElasticDate($date )
 	{
 
 		if ( isset( $date ) ) {
