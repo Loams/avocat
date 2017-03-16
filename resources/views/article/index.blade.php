@@ -24,48 +24,8 @@
                         <p>Date de signature: {{ date(' d-m-Y', strtotime($article->details->signature)) }}</p>
                     </div>
                     <div class="col-xs-12 col-sm-2 bg-ligthgrey">
-                        <p>nombre de version : {{ $article->versions->count() }}</p>
+                        <p class="text-center">Versions <span class="badge">{{ $article->versions->count() }}</span></p>
                     </div>
-
-                </div>
-                <div class="meta">
-
-                    {{$article->meta->meta_id }}<br>
-                    {{$article->meta->joid }}<br>
-                    {{$article->meta->url }}<br>
-                    {{$article->meta->origine }}<br>
-                    {{$article->meta->nature }}<br>
-                    {{$article->meta->type }}<br>
-                    {{date(' d-m-Y', strtotime($article->meta->debut)) }}<br>
-                    {{date(' d-m-Y', strtotime($article->meta->fin)) }}<br>
-                </div>
-                <hr></hr>
-                <div class="details">
-                    {{ $article->details->ministere }}<br>
-                    {{ $article->details->nature }}<br>
-                    {{ date(' d-m-Y', strtotime($article->details->publication)) }}<br>
-                    {{ date(' d-m-Y', strtotime($article->details->signature)) }}<br>
-                    {{ $article->details->titre }}<br>
-                    @if($article->details->contenu != '')
-                        {{ str_limit($article->details->contenu, 150 ,'...') }}<br>
-                    @else
-                        <p>Pas de description</p>
-                    @endif
-                </div>
-                <hr></hr>
-                <div class="versions">
-
-                    @forelse($article->versions as $version)
-                        nombre de versions : {{ $loop->count }}<br>
-                        {{$version->id_version}}<br>
-                        {{$version->origine}}<br>
-                        {{$version->etat}}<br>
-                        {{date(' d-m-Y', strtotime($version->debut)) }}<br>
-                        {{date(' d-m-Y', strtotime($version->fin)) }}<br>
-                        <hr></hr>
-                    @empty
-                        <p>aucune version</p>
-                    @endforelse
                 </div>
                 <a class="btn btn-primary pull-right" href="{{ route('article.show', $article->id) }}">en savoir plus</a>
             </div>
@@ -74,6 +34,6 @@
         <p>Aucun article</p>
     @endforelse
 
-    {{ $articles->links() }}
+   <div class="text-center">{{ $articles->links() }}</div>
     </div>
 @endsection
