@@ -37,14 +37,21 @@
         methods : {
             ExecuteSearch : function () {
                  var VueInstance = this;
+                    console.log(VueInstance.search_query == "");
+                    if(!VueInstance.search_query == ""){
                   axios.post('executeSearch', {
                         search_query: VueInstance.search_query
+
                     })
                         .then(function (response) {
-                           VueInstance.articles = response.data.articles;
+
+                         VueInstance.articles = response.data.articles;
                         })
                         .catch(function (error) {
                         });
+                }else{
+                    VueInstance.articles
+                }
             }
         }
     }

@@ -26,8 +26,8 @@ class AppArticle extends Mapping
 			$map->string ('description');
 			$map->string ('nature');
 			$map->string ('type');
-			$map->date ('publication')->format ('yyyy-MM-dd');
-			$map->date ('signature')->format ('yyyy-MM-dd');
+			$map->date ('publication')->format ('dd-MM-yyyy');
+			$map->date ('signature')->format ('dd-MM-yyyy');
         },$this->getModelIndex());
     }
 }
