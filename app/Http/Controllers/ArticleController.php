@@ -41,7 +41,7 @@ class ArticleController extends Controller
 	public function importArticle(Article $articles)
 	{
 
-		ini_set('max_execution_time', 180);
+		ini_set('max_execution_time', 600);
 		$datas = file_get_contents(resource_path('assets\json\data.json'));
 		$datas = json_decode($datas, true);
 
