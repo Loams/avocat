@@ -12095,7 +12095,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         ExecuteSearch: function ExecuteSearch() {
             var VueInstance = this;
-            axios.post('/test/public/executeSearch', {
+            axios.post('executeSearch', {
                 search_query: VueInstance.search_query
             }).then(function (response) {
                 VueInstance.articles = response.data.articles;
