@@ -12082,6 +12082,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = {
     data: function data() {
@@ -12105,7 +12109,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     VueInstance.articles = response.data.articles;
                 }).catch(function (error) {});
             } else {
-                VueInstance.articles;
+                VueInstance.articles = {};
             }
         }
     }
@@ -14551,7 +14555,7 @@ if (typeof jQuery === 'undefined') {
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(34)();
-exports.push([module.i, "\n.search_component{\n    display:-webkit-box;\n    display:-ms-flexbox;\n    display:flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    width: 100%;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.search_component input {\n    border : 1px transparent;\n}\n.search_results {\n    list-style-type: none;\n    background:lightgrey;\n    padding-left: 0px;\n    margin-top: 5px;\n    position:absolute;\n    z-index: 999;\n}\n.single_search_result {\n      border-bottom: 2px solid #eeeeee;\n      padding:10px;\n}\n.single_search_result:hover {\n    background: #cccccc;\n    cursor : pointer;\n}\n.article_name {\n    font-weight: bolder;\n}\n", ""]);
+exports.push([module.i, "\n.search_component{\n    display:-webkit-box;\n    display:-ms-flexbox;\n    display:flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    width: 100%;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n     padding:10px;\n}\n.search_results {\n    list-style-type: none;\n    background:lightgrey;\n    padding-left: 0px;\n    margin-top: 5px;\n    position:absolute;\n    z-index: 999;\n}\n.single_search_result {\n      border-bottom: 2px solid #eeeeee;\n      padding:10px;\n}\n.single_search_result:hover {\n    background: #cccccc;\n    cursor : pointer;\n}\n.article_name {\n    font-weight: bolder;\n}\n", ""]);
 
 /***/ }),
 /* 34 */
@@ -31801,17 +31805,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "search_component"
   }, [_c('div', {
     staticClass: "col-md-9"
-  }, [_c('input', {
+  }, [_c('div', {
+    staticClass: "input-group"
+  }, [_c('span', {
+    staticClass: "input-group-addon"
+  }, [_vm._v("Recherche")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
       value: (_vm.search_query),
       expression: "search_query"
     }],
-    staticClass: "search-input",
+    staticClass: "search-input form-control",
     attrs: {
       "type": "text",
-      "placeholder": "article titre date  "
+      "placeholder": "article titre  "
     },
     domProps: {
       "value": (_vm.search_query)
@@ -31823,7 +31831,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.search_query = $event.target.value
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  })])]), _vm._v(" "), _c('div', {
     staticClass: "col-md-9"
   }, [_c('ul', {
     staticClass: "search_results"

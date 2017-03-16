@@ -1,12 +1,16 @@
 <template>
     <div class="search_component">
        <div class="col-md-9">
-                <input type="text" 
-                v-model="search_query" 
-                class="search-input" 
-                @keyup="ExecuteSearch" 
-                placeholder="article titre date  "
+            <div class="input-group">
+                 <span class="input-group-addon" >Recherche</span>
+                <input type="text"
+                v-model="search_query"
+                class="search-input form-control"
+                @keyup="ExecuteSearch"
+                placeholder="article titre  "
                >
+            </div>
+
         </div>
         <div class="col-md-9">
             <ul class="search_results">
@@ -63,10 +67,9 @@
         width: 100%;
         justify-content: center;
         align-items: center;
+         padding:10px;
     }
-    .search_component input {
-        border : 1px transparent;
-    }
+
     .search_results {
         list-style-type: none;
         background:lightgrey;
@@ -74,6 +77,7 @@
         margin-top: 5px;
         position:absolute;
         z-index: 999;
+
     }
     .single_search_result {
           border-bottom: 2px solid #eeeeee;

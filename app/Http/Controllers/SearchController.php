@@ -20,6 +20,7 @@ class SearchController extends Controller
 	{
 		$articles = Article::search()->querystring('*' . $request->search_query . '*' , ['fields' => ['titre^4' ,
 			'description',
+			'ministere',
 			'joid',
 			'nature',
 			'joid',

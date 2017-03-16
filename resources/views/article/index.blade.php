@@ -12,15 +12,24 @@
         <div class="x_panel">
             <div class="x_title">
                 <h2>{{ $article->details->titre }}</h2>
-                <ul class="nav navbar-right panel_toolbox">
-                    <li>date signature {{ date(' d-m-Y', strtotime($article->details->signature)) }}<br>
-                    </li>
 
-                </ul>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-10">
+                        <p>Ministère: {{ $article->details->ministere }}</p>
+                        <p>Type:{{$article->meta->type }}</p>
+                        <p>Date de publication: {{ date(' d-m-Y', strtotime($article->details->publication)) }}</p>
+                        <p>Date de signature: {{ date(' d-m-Y', strtotime($article->details->signature)) }}</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-2 bg-ligthgrey">
+                        <p>nombre de version : {{ $article->versions->count() }}</p>
+                    </div>
+
+                </div>
                 <div class="meta">
+
                     {{$article->meta->meta_id }}<br>
                     {{$article->meta->joid }}<br>
                     {{$article->meta->url }}<br>

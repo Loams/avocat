@@ -87,6 +87,7 @@ class Article extends Model
 	{
 		$data = [
 			'id'               	=> $this->id ,
+			'ministere'			=> $this->details->ministere,
 			'titre'             => $this->details->titre ,
 			'joid'				=> $this->meta->joid,
 			'description'      	=> $this->details->description ,

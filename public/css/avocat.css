@@ -57,6 +57,7 @@ h2 {
     margin-left: 10px;
 }
 .x_content {
+    width: 100%;
     padding: 0 5px 6px;
     float: left;
     clear: both;
@@ -70,10 +71,9 @@ h2 {
     width: 100%;
     justify-content: center;
     align-items: center;
+    padding:10px;
 }
-.search_component input {
-    border : 1px transparent;
-}
+
 .search_results {
     list-style-type: none;
     background:ligthgrey;
@@ -81,6 +81,10 @@ h2 {
     margin-top: 5px;
     position:absolute;
 
+}
+
+.search-input{
+    width: 100%;
 }
 .single_search_result {
     border-bottom: 2px solid #eeeeee;
@@ -94,5 +98,7 @@ h2 {
     font-weight: bolder;
 }
 
-
+.bg-ligthgrey{
+    background-color:#e3e3e3;
+}
 
