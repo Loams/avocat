@@ -109,7 +109,7 @@ class Article extends Model
 
 		if ( isset( $date ) ) {
 
-			return $date->format('Y-m-d');
+			return $date->format('d-m-Y');
 		}
 	}
 }

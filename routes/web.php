@@ -18,7 +18,7 @@ Route::get(
 //debug de json
 Route::get('/test', ['uses' => "ArticleController@testJson"]);
 
-Route::get('/articles', ['uses' => 'ArticleController@index']);
+Route::get('/articles', ['uses' => 'ArticleController@index', 'as' => 'article.index']);
 Route::get('/article/{id}', ['uses' => 'ArticleController@show', 'as' => 'article.show'])->where('id', '[0-9]+');
 
 Route::post('/executeSearch', 'SearchController@executeSearch')->name('execute_search');

@@ -87,7 +87,8 @@ class ArticleController extends Controller
 				}
 			}
 		}
-		return view('article.index')->with('success', 'importation de la base ok');
+
+		return redirect(route('article.index'))->with('success', 'importation de la base ok');
 	}
 
 	/**

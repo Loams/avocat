@@ -35,5 +35,5 @@
     @endforelse
 
    <div class="text-center">{{ $articles->links() }}</div>
-    </div>
+
 @endsection

@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <div class="container">
+
             <div class="x_panel">
                 <div class="x_title">
                     <h2>{{ $article->details->titre }}</h2>
